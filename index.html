@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1WXYXF5VQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1WXYXF5VQW');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>餐廳合作顧問 Serena｜Uber Eats 外送合作・LINE Pay 申辦・宿霧遊學</title>
@@ -1741,6 +1749,45 @@ async function checkAddress() {
   }
   window.addEventListener('hashchange',route);
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',route); else route();
+})();
+</script>
+<script>
+(function(){
+  function send(name, params){ try{ if(typeof window.gtag==='function') window.gtag('event', name, params||{}); }catch(e){} }
+  var TITLES={home:'首頁',ubereats:'Uber Eats 外送合作',linepay:'LINE Pay 申辦',study:'菲律賓遊學規劃',about:'關於我'};
+  function curTab(){ var p=document.querySelector('.tab-panel.active'); return p? p.id.replace(/^tab-/,'') : 'home'; }
+  var last=curTab();
+  if(typeof window.switchTab==='function'){
+    var prev=window.switchTab;
+    window.switchTab=function(id){
+      prev.apply(this, arguments);
+      try{
+        var now=curTab();
+        if(now!==last){ last=now; send('page_view',{page_title:'Serena｜'+(TITLES[now]||now), page_location:location.href, tab:now}); }
+      }catch(e){}
+    };
+  }
+  window.addEventListener('hashchange', function(){ var now=curTab(); if(now!==last){ last=now; send('page_view',{page_title:'Serena｜'+(TITLES[now]||now), page_location:location.href, tab:now}); } });
+  document.addEventListener('click', function(e){
+    var a=e.target && e.target.closest ? e.target.closest('a[href]') : null; if(!a) return;
+    var href=a.getAttribute('href')||'', ev=null;
+    if(/pay\.line\.me|linepay/i.test(href)) ev='click_linepay_apply';
+    else if(/line\.me\//i.test(href)) ev='click_line';
+    else if(/calendar\.app\.google/i.test(href)) ev='click_booking';
+    else if(/forms\.gle/i.test(href)) ev='click_contact_form';
+    else if(/^tel:/i.test(href)) ev='click_call';
+    else if(/^mailto:/i.test(href)) ev='click_email';
+    if(!ev) return;
+    send(ev,{tab:curTab(), link_text:(a.innerText||a.textContent||'').replace(/\s+/g,' ').trim().slice(0,100), link_url:a.href, transport_type:'beacon'});
+  }, true);
+  if(typeof window.ueShowQuizResult==='function'){
+    var q=window.ueShowQuizResult;
+    window.ueShowQuizResult=function(){
+      var r=q.apply(this, arguments);
+      try{ var lv=document.getElementById('ue-q-level'); send('quiz_complete',{tab:curTab(), quiz_result:lv? lv.textContent:''}); }catch(e){}
+      return r;
+    };
+  }
 })();
 </script>
 </body>
