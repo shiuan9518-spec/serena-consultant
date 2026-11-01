@@ -608,6 +608,22 @@
   .cta-hint,.claude-sw .cta-hint{display:flex;flex-wrap:wrap;gap:4px 16px;margin:12px 0 0;font-size:13.5px;line-height:1.6;color:var(--mut,#6b5d5d)}
   .btns[style*="center"]+.cta-hint{justify-content:center}
 .id-note{display:inline-flex}
+
+/* Home: embedded booking + contact form (r8) */
+  .eh{max-width:780px;margin:0 auto}
+  .eh>input{position:absolute;opacity:0;pointer-events:none}
+  .eh-switch{display:flex;gap:4px;padding:5px;background:#fff;border:1.5px solid var(--line,#e8dcd4);border-radius:999px;box-shadow:0 4px 14px rgba(58,44,44,.06)}
+  .eh-switch label{flex:1 1 0;text-align:center;padding:11px 12px;border-radius:999px;font-weight:800;font-size:16px;cursor:pointer;color:var(--ink,#3a2c2c);transition:background-color .2s,color .2s,box-shadow .2s;white-space:nowrap}
+  .eh-switch label:hover{background:rgba(29,170,85,.08)}
+#eh-book:checked~.eh-switch label[for=eh-book],#eh-form:checked~.eh-switch label[for=eh-form]{background:linear-gradient(135deg,#1DAA55,#12904A);color:#fff;box-shadow:0 4px 12px rgba(29,170,85,.3)}
+#eh-book:focus-visible~.eh-switch label[for=eh-book],#eh-form:focus-visible~.eh-switch label[for=eh-form]{outline:3px solid #1DAA55;outline-offset:2px}
+  .eh-hint{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;margin:12px 0 14px;font-size:13.5px;color:var(--mut,#6a5a5a)}
+  .eh-panel{display:none;background:#fff;border:1px solid var(--line,#e8dcd4);border-radius:22px;padding:8px;box-shadow:0 8px 24px rgba(58,44,44,.07);overflow:hidden}
+  .eh-panel iframe{display:block;width:100%;border-radius:16px;background:#fff}
+#eh-book:checked~.eh-p-book,#eh-form:checked~.eh-p-form{display:block}
+  .eh-fallback{text-align:center;font-size:14px;margin:8px 0 4px;color:var(--mut,#6a5a5a)}
+  .eh-fallback a{font-weight:800;color:#0B6B3D}
+@media(max-width:520px){.eh-switch label{font-size:15px;padding:10px 6px}.eh-panel{padding:4px;border-radius:18px}.eh-p-book iframe{height:820px}.eh-p-form iframe{height:1900px}}
 </style>
 <style>
   .claude-sw h2.hero-h { font-size:clamp(30px,5.6vw,46px); line-height:1.3; font-weight:900; letter-spacing:.01em; margin-bottom:16px; max-width:640px; }
@@ -888,7 +904,27 @@
 <div class="btns"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a><a class="btn o" href="mailto:serena.sun@uber.com">✉️ 寄信給我</a></div>
 </div></section>
 
-<section id="collab-home"><div class="wrap prose">
+<section id="book-embed"><div class="wrap">
+<h2>直接在這裡預約或留言</h2>
+<p class="sub">不用跳出網站，選一個最順手的方式就好。</p>
+<div class="eh">
+<input type="radio" name="eh-pick" id="eh-book" checked>
+<input type="radio" name="eh-pick" id="eh-form">
+<div class="eh-switch" role="group" aria-label="選擇聯絡方式">
+<label for="eh-book">📅 預約 30 分鐘</label><label for="eh-form">📝 留聯絡方式</label>
+</div>
+<p class="eh-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
+<div class="eh-panel eh-p-book">
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2nuCHUmDtCX4mFVgH8cca5iLLrHp5_KJXyPC21cIN5PdO1MeS_1S2PUiE7Kb4Ss5xRIU2PzJFR?gv=true" title="Serena｜30 分鐘聊聊 預約頁" loading="lazy" style="border:0" width="100%" height="760" frameborder="0"></iframe>
+<p class="eh-fallback">看不到預約表？<a href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">在新分頁開啟預約頁 ↗</a></p>
+</div>
+<div class="eh-panel eh-p-form">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebWTtI0qET16iMfNDMTy9GhycszBUkPCFkciCum5SVCOq5xQ/viewform?embedded=true" title="留下聯絡方式，Serena 主動聯繫你" loading="lazy" style="border:0" width="100%" height="1720" frameborder="0">載入中…</iframe>
+<p class="eh-fallback">看不到表單？<a href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">在新分頁開啟表單 ↗</a></p>
+</div>
+</div>
+</div></section>
+<section id="collab-home" class="alt"><div class="wrap prose">
 <h2>🤝 異業合作，歡迎一起聊聊</h2>
 <p>不論你是金流、POS、餐飲設備、食材、行銷、保險，或其他產業的業務夥伴，只要我們一樣在服務餐廳老闆，都非常歡迎一起交流、互相引薦。</p>
 <p>每位老闆需要的幫忙都不只一種。我們各自把擅長的做好，再把彼此介紹給需要的店家，老闆省事，我們也一起成長——這就是我想要的互惠合作。有想法就直接找我，先喝杯咖啡聊聊也很好 ☕</p>
