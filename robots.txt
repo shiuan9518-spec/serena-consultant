@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shiuan9518-spec.github.io/serena-consultant/sitemap.xml
