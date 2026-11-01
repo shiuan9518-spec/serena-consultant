@@ -1,20 +1,22 @@
-# Serena｜餐廳合作顧問
+# Serena 芷琁｜餐廳合作顧問
 
-> Serena 是台南在地的餐廳合作顧問（Uber Eats 合作 restaurant partnership consultant），協助台灣店家做外送上架、LINE Pay 收款申辦與線上經營，也分享菲律賓宿霧 CIA 遊學經驗。本站為 Serena 的個人經營頁面，非任何平台或品牌的官方網站。
+> Serena 芷琁是台南在地的餐廳合作顧問，協助台灣店家做外送上架、LINE Pay 收款申辦與線上經營，也分享菲律賓宿霧 CIA 遊學經驗。本站為 Serena 的個人經營頁面，非任何平台或品牌的官方網站。
 
 網站：https://shiuan9518-spec.github.io/serena-consultant/
+最後更新：2026-11-02
 
-## 服務
-- [Uber Eats 外送合作](https://shiuan9518-spec.github.io/serena-consultant/#ubereats)：從申請、免費拍照／AI修圖、免費平板、上線設定到正式接單一路協助，上線後持續跟進；另有配合的熊貓資深業務可協助雙平台對接。活動期間 2026/12/31 前限時申請，享試用 12 個月超低優惠，免啟用費（收到第一張訂單才起算）。頁面提供 8 題外送適合度小測驗、外送服務範圍查詢地圖與售價試算工具（費率由店家自行輸入）。
-- [LINE Pay 申辦](https://shiuan9518-spec.github.io/serena-consultant/#linepay)：曾任職 LINE Pay 總公司，熟悉申辦流程與眉角，推薦碼 Q5DATB。
-- [菲律賓宿霧 CIA 遊學](https://shiuan9518-spec.github.io/serena-consultant/#philippines)：2024 年親赴宿霧 CIA，一個月雅思從 4 分到 5.5；可介紹認識的台灣代辦。
-- [關於我](https://shiuan9518-spec.github.io/serena-consultant/#about)：曾任 LINE Pay 總公司、meepShop 品牌電商顧問，現為餐廳合作顧問。
+## 主要頁面
+- [Uber Eats 外送合作](https://shiuan9518-spec.github.io/serena-consultant/uber-eats/)：從申請、免費拍照／AI修圖、免費平板、上線設定到正式接單一路協助，上線後持續跟進；另有配合的熊貓資深業務可協助雙平台對接。活動期間 2026/12/31 前限時申請，享試用 12 個月超低優惠，免啟用費（收到第一張訂單才起算）。頁面提供 8 題外送適合度小測驗、外送服務範圍查詢地圖與售價試算工具（費率由店家自行輸入）。
+- [LINE Pay 申辦](https://shiuan9518-spec.github.io/serena-consultant/line-pay/)：曾任職 LINE Pay 總公司，熟悉申辦流程與眉角，推薦碼 Q5DATB；LINE Pay 官網公告費率 3%（未稅）。
+- [菲律賓宿霧 CIA 遊學](https://shiuan9518-spec.github.io/serena-consultant/cebu-study/)：2024 年親赴宿霧 CIA，一個月雅思從 4 分到 5.5；可介紹認識的台灣代辦。
+- [關於我](https://shiuan9518-spec.github.io/serena-consultant/about/)：曾任 LINE Pay 總公司、meepShop 品牌電商顧問，現為餐廳合作顧問；名片與異業合作。
 
 ## 聯絡方式
 - 公務機 LINE／電話：0966790286（https://line.me/ti/p/yBFkTTbwJ7）
-- 服務範圍：全台灣
+- 預約 30 分鐘線上聊聊：https://calendar.app.google/Z6xkHL7BuwVXaVJz5
+- 服務範圍：台南與全台灣
 
-## 常見問題（摘要）
+## Uber Eats 外送合作常見問題（摘要）
 - **申請要準備什麼資料？** 身分驗證文件（可加註「僅供 Uber Eats 外送合作申請使用」）、台幣銀行帳戶、發票設定（不開發票的店家也要填），以及菜單檔案（PDF 或 JPG，避免手寫）。銀行帳戶和發票設定完成後，帳號才會開通。（若僅有稅籍登記／設籍課稅而免辦商業登記的小店或攤商，也可以先傳給我幫你確認審核文件。）
 - **從申請到上線要經過哪些步驟？** 線上簽約 → 提交菜單、預約拍照 → 後台上傳資料 → 菜單建置 → 寄送平板 → 開機接單。平板寄出後大約 2 個工作天送達。每一步我都會陪你處理。
 - **拍照怎麼安排？** 攝影師到店拍 5 道餐點，加 1 張封面合照，拍攝前一天會先電話確認。不想特別準備餐點，也可以改用 AI 免費修圖。照片會在店家接到第一筆訂單、完成滿意度調查後寄給你，照片不能用在其他競業外送平台。

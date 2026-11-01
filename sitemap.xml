@@ -2,8 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shiuan9518-spec.github.io/serena-consultant/</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shiuan9518-spec.github.io/serena-consultant/uber-eats/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shiuan9518-spec.github.io/serena-consultant/line-pay/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shiuan9518-spec.github.io/serena-consultant/cebu-study/</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://shiuan9518-spec.github.io/serena-consultant/about/</loc>
+    <lastmod>2026-11-02</lastmod>
   </url>
 </urlset>
