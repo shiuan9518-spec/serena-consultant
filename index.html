@@ -208,13 +208,20 @@
   }
   /* Theme 3: LINE Pay (LINE Green + Mint) */
   .theme-linepay {
-    --ink:#12301f;--y:#06c755;--y2:#e5f9ec;--c:#ffffff;--c2:#d6f5e2;--cd:#04803a;
-    --cream:#ffffff;--mint:#d6f5e2;--line:#d3ece0;--mut:#46604f;--btn:#06c755;
-    --cta:#06c755;--ctah:#ffffff;--ctap:#eafff2;--ctabtn:#ffffff;--ctabtnink:#04803a;
-    --h1:#2fdc79;--h2:#ffffff;--cc1:#2fdc79;--cc2:#04a948;--dot:#06c755;
-    --shc:5,100,50;--herobg:#06c755;--heroink:#ffffff;--heromut:#eafff2;
-    --hbtn:#ffffff;--hbtnink:#04803a;--hmark:rgba(255,255,255,.35);
+    --ink:#1F3B2C;--y:#06C755;--y2:#EAF8EF;--c:#ffffff;--c2:#DDF3E5;--cd:#058A3C;
+    --cream:#ffffff;--mint:#DDF3E5;--line:#CDEFD9;--mut:#46604f;--btn:#06C755;
+    --cta:linear-gradient(135deg,#EAF8EF 0%,#F4FBF6 100%);--ctah:#1F3B2C;--ctap:#3E5A4A;--ctabtn:#06C755;--ctabtnink:#ffffff;
+    --h1:#D6F3E1;--h2:#ffffff;--cc1:#D6F3E1;--cc2:#C3ECD2;--dot:#06C755;
+    --shc:6,120,60;--herobg:linear-gradient(135deg,#EAF8EF 0%,#F4FBF6 100%);--heroink:#1F3B2C;--heromut:#3E5A4A;
+    --hbtn:#06C755;--hbtnink:#ffffff;--hmark:rgba(6,199,85,.25);
   }
+  .theme-linepay .btn:not(.o), .theme-linepay .cta .btn { text-shadow: 0 1px 2px rgba(0,70,30,.35); font-weight: 800; }
+  .theme-linepay .cta { border: 1.5px solid #CDEFD9; }
+  .theme-linepay .hero { border-bottom: 1px solid #CDEFD9; }
+  .theme-linepay .hero h1, .theme-linepay .cta h2 { color: #1F3B2C; }
+  .theme-linepay .hero .eyebrow { color: #058A3C; border-color: #06C755; }
+
+  .theme-linepay .hero .cta-hint { color: var(--heromut); }
   /* Theme 4: Philippines Study Abroad (Ocean Blue + Coral) */
   .theme-phil {
     --ink:#0b3550;--y:#5bb5d5;--y2:#e3f3f9;--c:#ff8c69;--c2:#ffe0d6;--cd:#c8553a;
@@ -1193,7 +1200,7 @@
 <section id="faq-sec" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
   <p class="ue-eyebrow">⑦ 常見問題</p>
   <h2 class="ue-sec-title" style="margin: 0 0 10px; font-size: 34px; line-height: 1.35; font-weight: 900">接單、收款、改菜單？12 題一次看懂</h2>
-  <p class="ue-hook-sub">整理自官方商家指南，用老闆聽得懂的話說明。</p>
+  <p class="ue-hook-sub">整理自官方商家指南，常見疑問一次說清楚。</p>
 
   <details class="ue-faq"><summary>Q1：申請要準備什麼資料？</summary><p>身分驗證文件（可加註「僅供 Uber Eats 外送合作申請使用」）、台幣銀行帳戶、發票設定（不開發票的店家也要填），以及菜單檔案（PDF 或 JPG，避免手寫）。銀行帳戶和發票設定完成後，帳號才會開通。（若僅有稅籍登記／設籍課稅而免辦商業登記的小店或攤商，也可以先傳給我幫你確認審核文件。）</p></details>
   <details class="ue-faq"><summary>Q2：從申請到上線要經過哪些步驟？</summary><p>線上簽約 → 提交菜單、預約拍照 → 後台上傳資料 → 菜單建置 → 寄送平板 → 開機接單。平板寄出後大約 2 個工作天送達。每一步我都會陪你處理。</p></details>
@@ -1324,8 +1331,8 @@
 </ol></div></section>
 
 <section><div class="wrap"><div class="cta"><h2>準備好了？直接申辦</h2><p>加我的 LINE，我會傳給你詳細的申辦說明。透過我介紹，由總公司專員直接與你對接，從送件到開通，全程有人跟進。</p>
-<div class="btns" style="justify-content:center"><a class="btn" data-line="加 LINE 諮詢申辦" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 諮詢申辦（0966790286）</a><a class="btn" style="background:#04803a;color:#fff;border-color:#04803a" href="https://pay.line.me/tw/apply/contactRequest?locale=zh_hant&code=Q5DATB" target="_blank" rel="noopener">前往 LINE Pay 官網申辦（推薦碼 Q5DATB）</a><a class="btn" style="background:transparent;color:#fff;border-color:#fff" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
-<p class="fine" style="color:#eafff2;margin-top:16px">申辦時請在推薦人欄位填入代碼：Q5DATB</p></div></div></section>
+<div class="btns" style="justify-content:center"><a class="btn" data-line="加 LINE 諮詢申辦" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 諮詢申辦（0966790286）</a><a class="btn" style="background:#fff;color:#1F3B2C;border-color:#06C755;text-shadow:none" href="https://pay.line.me/tw/apply/contactRequest?locale=zh_hant&code=Q5DATB" target="_blank" rel="noopener">前往 LINE Pay 官網申辦（推薦碼 Q5DATB）</a><a class="btn" style="background:transparent;color:#1F3B2C;border-color:#1F3B2C;text-shadow:none" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<p class="fine" style="color:#3E5A4A;margin-top:16px">申辦時請在推薦人欄位填入代碼：Q5DATB</p></div></div></section>
 
 <div class="wrap"><div class="disc">本站為芷琁（Serena）的個人經營頁面，內容為個人專業服務介紹，非任何平台或品牌的官方網站。實際優惠、適用資格、曝光範圍及合作內容依官方活動與店家條件為準。</div></div>
   </div>
