@@ -547,6 +547,52 @@
     .sticky-cta .sc-msg { font-size: 12px !important; line-height: 1.3; flex: 1 1 auto; min-width: 0; }
     .sticky-cta a { flex: 0 0 auto; white-space: nowrap; font-size: 14px !important; padding: 10px 16px !important; }
   }
+
+  /* ===== UE jump menu + scannable sections (t31u) ===== */
+  .ue-subnav-bar { position: sticky; top: var(--hdr-h, 0px); z-index: 900; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #E2E8DF; box-shadow: 0 6px 18px rgba(18,37,27,.05); }
+  .ue-subnav-inner { max-width: 1240px; margin: 0 auto; padding: 10px 24px; display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; justify-content: flex-start; }
+  .ue-jump-label { flex: 0 0 auto; font-size: 13.5px; font-weight: 800; color: #0B6B3D; letter-spacing: .02em; white-space: nowrap; }
+  .ue-jump { display: flex; flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; padding: 2px; min-width: 0; }
+  .ue-jump::-webkit-scrollbar { display: none; }
+  #tab-ubereats .ue-jump a, .ue-jump a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 7px; text-decoration: none; white-space: nowrap; font-size: 13.5px; font-weight: 700; color: #2E4337; background: #F1F5EF; border: 1px solid #E2E8DF; padding: 6px 12px 6px 6px; border-radius: 999px; transition: background-color .2s, color .2s, box-shadow .2s, transform .15s; }
+  .ue-jump a .n { width: 22px; height: 22px; border-radius: 50%; background: #FFFFFF; color: #0B6B3D; font-size: 12px; font-weight: 900; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(18,37,27,.12); }
+  #tab-ubereats .ue-jump a:hover, .ue-jump a:hover { color: #0B6B3D; background: #FFFFFF; box-shadow: 0 2px 8px rgba(18,37,27,.08); transform: translateY(-1px); }
+  #tab-ubereats .ue-jump a.on, .ue-jump a.on { background: linear-gradient(135deg,#1DAA55,#12904A); color: #FFFFFF; border-color: transparent; box-shadow: 0 4px 12px rgba(29,170,85,.3); }
+  .ue-jump a.on .n { color: #12904A; }
+  .ue-hook-sub { margin: 0 0 22px; font-size: 18px; font-weight: 700; color: #0B6B3D; max-width: 760px; }
+  .ue-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 14px; font-weight: 800; color: #0B6B3D; background: #E6F2EA; padding: 5px 12px; border-radius: 999px; letter-spacing: .04em; }
+  .ue-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 26px; }
+  #tab-ubereats .ue-cta-row a, .ue-cta-row a { text-decoration: none; font-weight: 700; font-size: 16px; padding: 12px 22px; border-radius: 12px; display: inline-flex; align-items: center; gap: 6px; min-height: 48px; transition: transform .15s, box-shadow .15s; }
+  #tab-ubereats .ue-cta-row a.l, .ue-cta-row a.l { background: #3DDC84; color: #08241A; box-shadow: 0 4px 12px rgba(61,220,132,.3); }
+  #tab-ubereats .ue-cta-row a.b, .ue-cta-row a.b { background: #FFFFFF; color: #0F2E1F; border: 1.5px solid #0F2E1F; }
+  #tab-ubereats .ue-cta-row a.f, .ue-cta-row a.f { background: #FFFFFF; color: #0B6B3D; border: 1.5px dashed #0B6B3D; }
+  #tab-ubereats .ue-cta-row a.x, .ue-cta-row a.x { color: #0B6B3D; padding: 12px 6px; text-decoration: underline; text-underline-offset: 4px; }
+  .ue-cta-row a:hover { transform: translateY(-1px); }
+  .ue-cta-hint { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 10px 0 0; font-size: 13.5px; color: #4A5D52; }
+  .ue-dark .ue-cta-hint { color: #C9DBCF; justify-content: center; }
+  .id-note { display: inline-flex; align-items: center; gap: 4px; margin: 4px 0 0; font-size: 12.5px; font-weight: 700; color: #0B5A33; background: #E6F2EA; border: 1px solid #CFE3D6; padding: 2px 10px; border-radius: 999px; line-height: 1.6; white-space: normal; }
+  .ue-faq li .id-note, ul.ue-tick .id-note { margin-left: 2px; }
+  /* reward */
+  .ue-reward-word { display: inline-block; font-size: 1.9em; font-weight: 900; color: #FFFFFF; background: linear-gradient(135deg,#1DAA55,#0B6B3D); padding: 2px 16px 4px; border-radius: 14px; line-height: 1.3; box-shadow: 0 6px 16px rgba(29,170,85,.3); letter-spacing: .04em; vertical-align: middle; margin: 0 4px; }
+  .ue-reward-steps { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 2px; }
+  .ue-reward-steps div { flex: 1 1 90px; background: #FFFFFF; border: 1.5px solid #CFE3D6; border-radius: 16px; padding: 12px 10px; text-align: center; font-weight: 800; color: #12251B; font-size: 16px; }
+  .ue-reward-steps b { display: block; font-size: 22px; color: #0B6B3D; }
+  .ue-reward-steps .arr { color: #1DAA55; }
+  .ue-reward-steps strong { color: #0B6B3D; font-size: 15px; }
+  section[id], div[id="zone-card"], div[id="calc-card"] { scroll-margin-top: calc(var(--hdr-h, 0px) + 70px); }
+  @media (max-width: 640px) {
+    .ue-subnav-inner { padding: 8px 12px; gap: 8px; }
+    .ue-jump-label { font-size: 12.5px; }
+    .ue-hook-sub { font-size: 16px; }
+    .ue-cta-row a { flex: 1 1 100%; justify-content: center; }
+    #tab-ubereats .ue-cta-row a.x, .ue-cta-row a.x { flex: 0 0 auto; }
+    .ue-reward-word { font-size: 1.6em; }
+  }
+
+  .btn.btn-form,.claude-sw .btn.btn-form{border-style:dashed;box-shadow:none}
+  .cta-hint,.claude-sw .cta-hint{display:flex;flex-wrap:wrap;gap:4px 16px;margin:12px 0 0;font-size:13.5px;line-height:1.6;color:var(--mut,#6b5d5d)}
+  .btns[style*="center"]+.cta-hint{justify-content:center}
+.id-note{display:inline-flex}
 </style>
 <style>
   .claude-sw h2.hero-h { font-size:clamp(30px,5.6vw,46px); line-height:1.3; font-weight:900; letter-spacing:.01em; margin-bottom:16px; max-width:640px; }
@@ -672,7 +718,7 @@
      "name": "申請要準備什麼資料？",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "身分驗證文件、台幣銀行帳戶、發票設定（不開發票的店家也要填），以及菜單檔案（PDF 或 JPG，避免手寫）。銀行帳戶和發票設定完成後，帳號才會開通。（若僅有稅籍登記／設籍課稅而免辦商業登記的小店或攤商，也可以先傳給我幫你確認審核文件。）"
+      "text": "身分驗證文件（可加註「僅供 Uber Eats 外送合作申請使用」）、台幣銀行帳戶、發票設定（不開發票的店家也要填），以及菜單檔案（PDF 或 JPG，避免手寫）。銀行帳戶和發票設定完成後，帳號才會開通。（若僅有稅籍登記／設籍課稅而免辦商業登記的小店或攤商，也可以先傳給我幫你確認審核文件。）"
      }
     },
     {
@@ -808,7 +854,8 @@
 <span class="eyebrow">餐廳合作顧問</span>
 <h1>Serena <mark>芷琁</mark></h1>
 <p class="lead">讓更多人吃到你的美味——從外送上架、金流到品牌經營，陪店家一步步往前走</p>
-<div class="btns"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊聊</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<div class="btns"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊聊</a><a class="btn o btn-form" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<p class="cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
 </div></div>
 
 <section><div class="wrap">
@@ -830,7 +877,8 @@
 <h2>🤝 異業合作，歡迎一起聊聊</h2>
 <p>不論你是金流、POS、餐飲設備、食材、行銷、保險，或其他產業的業務夥伴，只要我們一樣在服務餐廳老闆，都非常歡迎一起交流、互相引薦。</p>
 <p>每位老闆需要的幫忙都不只一種。我們各自把擅長的做好，再把彼此介紹給需要的店家，老闆省事，我們也一起成長——這就是我想要的互惠合作。有想法就直接找我，先喝杯咖啡聊聊也很好 ☕</p>
-<div class="btns" style="margin-top:22px"><a class="btn" data-line="加 LINE 聊合作" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊合作（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊合作</a></div>
+<div class="btns" style="margin-top:22px"><a class="btn" data-line="加 LINE 聊合作" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊合作（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊合作</a><a class="btn o btn-form" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a></div>
+<p class="cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
 </div></section>
 
 <div class="wrap"><div class="disc">本站為芷琁（Serena）的個人經營頁面，內容為個人專業服務介紹，非任何平台或品牌的官方網站。實際優惠、適用資格、曝光範圍及合作內容依官方活動與店家條件為準。</div></div>
@@ -842,16 +890,8 @@
   
 <div class="ue-subnav-bar">
   <div class="ue-subnav-inner">
-    <span style="font-size: 14px; font-weight: 700; color: #0B6B3D">🛵 外送合作專頁快速跳轉：</span>
-    <div class="ue-nav">
-      <a href="#why">為什麼找我</a>
-      <a href="#offer">合作資源（2026/12/31前）</a>
-      <a href="#steps">合作流程</a>
-      <a href="#quiz-sec">1分鐘準備度健檢</a>
-      <a href="#tools-sec">56區範圍秒查＆定價計算機</a>
-      <a href="#prep-sec">備齊資料清單</a>
-      <a href="#faq-sec">12大常見Q&amp;A</a>
-    </div>
+    <span class="ue-jump-label">🧭 快速跳到：</span>
+    <nav class="ue-nav ue-jump" aria-label="外送合作頁快速跳轉"><a href="#offer" data-jump="offer"><span class="n">1</span>🎁 申請拿什麼</a><a href="#quiz-sec" data-jump="quiz-sec"><span class="n">2</span>✅ 1 分鐘健檢</a><a href="#zone-card" data-jump="zone-card"><span class="n">3</span>📍 查外送範圍</a><a href="#calc-card" data-jump="calc-card"><span class="n">4</span>🧮 試算售價</a><a href="#why" data-jump="why"><span class="n">5</span>🙋 為什麼找我</a><a href="#steps" data-jump="steps"><span class="n">6</span>📝 流程＆資料</a><a href="#faq-sec" data-jump="faq-sec"><span class="n">7</span>💬 常見問題</a></nav>
   </div>
 </div>
 
@@ -880,54 +920,28 @@
   </div>
 </section>
 
-<section id="why" style="max-width: 1120px; margin: 0 auto; padding: 84px 24px 32px">
-  <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #0B6B3D; letter-spacing: 0.08em">WHY SERENA</p>
-  <h2 class="ue-sec-title" style="margin: 0 0 36px; font-size: 36px; line-height: 1.35; font-weight: 900">同樣是外送平台，為什麼找我？</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
-    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
-      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">01</span>
-      <h3 style="margin: 0; font-size: 22px; font-weight: 700">一次搞定，不用找好幾個人</h3>
-      <p style="margin: 0; font-size: 17px; color: #3A4D42">外送平台上架、LINE Pay 收款，而且<strong>我有配合的熊貓資深業務</strong>，雙外送平台與店內行動支付都有專人對接，一條龍辦到好。</p>
-    </div>
-    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
-      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">02</span>
-      <h3 style="margin: 0; font-size: 22px; font-weight: 700">懂線上經營，不只是送件</h3>
-      <p style="margin: 0; font-size: 17px; color: #3A4D42">做過品牌電商顧問，我知道顧客在手機上怎麼挑店。照片、菜單、價格怎麼呈現，都會影響顧客下不下單。</p>
-    </div>
-    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
-      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">03</span>
-      <h3 style="margin: 0; font-size: 22px; font-weight: 700">上線後，找得到人</h3>
-      <p style="margin: 0; font-size: 17px; color: #3A4D42">有問題直接加我公務機 LINE（0966790286），不用自己打客服排隊。</p>
-    </div>
-    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
-      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">04</span>
-      <h3 style="margin: 0; font-size: 22px; font-weight: 700">我自己就是重度外送顧客</h3>
-      <p style="margin: 0; font-size: 17px; color: #3A4D42">南部第一批外送平台使用者，連續兩年以上下單量超過 99% 的用戶。顧客打開 App 時在看什麼，我很清楚。</p>
-    </div>
-  </div>
-</section>
-
 <section id="offer" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
   <div class="ue-offer-box" style="background: #FFFFFF; border-radius: 28px; padding: 48px 40px; border: 1px solid #E2E8DF">
     <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 36px">
       <div>
-        <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #0B6B3D; letter-spacing: 0.08em">LIMITED OFFER</p>
-        <h2 class="ue-sec-title" style="margin: 0; font-size: 36px; line-height: 1.35; font-weight: 900">現在申請，你可以拿到</h2>
+        <p class="ue-eyebrow">① 申請就有</p>
+        <h2 class="ue-sec-title" style="margin: 0; font-size: 36px; line-height: 1.35; font-weight: 900">想做外送，又怕還沒賺先花錢？</h2>
+        <p class="ue-hook-sub" style="margin: 8px 0 0">設備、拍照、啟用費都不用你先出，收到第一張訂單才起算。</p>
       </div>
       <span style="background: #FFF4CC; color: #5A4500; font-weight: 700; font-size: 15px; padding: 8px 16px; border-radius: 999px">2026/12/31 前限時申請</span>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
       <div style="display: flex; gap: 16px; align-items: flex-start; padding: 24px; background: #F5F7F2; border-radius: 16px">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6B3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><rect x="3" y="4" width="18" height="17" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
-        <div><h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 700">試用 12 個月超低優惠</h3><p style="margin: 0; font-size: 16px; color: #3A4D42">符合條件的店家，免啟用費、近乎 0 成本開始合作</p></div>
+        <div><h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 700">試用 12 個月超低優惠</h3><p style="margin: 0; font-size: 16px; color: #3A4D42">符合條件的店家，低門檻開始做外送</p></div>
       </div>
       <div style="display: flex; gap: 16px; align-items: flex-start; padding: 24px; background: #F5F7F2; border-radius: 16px">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6B3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-        <div><h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 700">免啟用費（收到第一張訂單才起算）</h3><p style="margin: 0; font-size: 16px; color: #3A4D42">先申請先保留優惠名額，收到第一張訂單才起算試用期</p></div>
+        <div><h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 700">免啟用費（收到第一張訂單才起算）</h3><p style="margin: 0; font-size: 16px; color: #3A4D42">不用先付費，收到第一張訂單才起算試用期，無綁約</p></div>
       </div>
       <div style="display: flex; gap: 16px; align-items: flex-start; padding: 24px; background: #F5F7F2; border-radius: 16px">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6B3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
-        <div><h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 700">免費接單平板</h3><p style="margin: 0; font-size: 16px; color: #3A4D42">免費平板提供使用，不需要自己買設備，收到就能接單</p></div>
+        <div><h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 700">免費接單平板</h3><p style="margin: 0; font-size: 16px; color: #3A4D42">不用自己買設備，收到就能接單</p></div>
       </div>
       <div style="display: flex; gap: 16px; align-items: flex-start; padding: 24px; background: #F5F7F2; border-radius: 16px">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0B6B3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
@@ -942,68 +956,7 @@
         <div><h3 style="margin: 0 0 4px; font-size: 19px; font-weight: 700">外帶自取．線上點餐</h3><p style="margin: 0; font-size: 16px; color: #3A4D42">顧客手機預約付款，到店取餐，店內同價</p></div>
       </div>
     </div>
-  </div>
-</section>
-
-<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
-  <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #0B6B3D; letter-spacing: 0.08em">HANDS-ON SUPPORT</p>
-  <h2 class="ue-sec-title" style="margin: 0 0 12px; font-size: 34px; line-height: 1.35; font-weight: 900">我幫你省掉的來回確認</h2>
-  <p style="margin: 0 0 28px; font-size: 17px; color: #4A5D52; max-width: 680px">自己申請，常常卡在「這個欄位要填什麼？」「照片被退件」。這些我先幫你擋掉。</p>
-  <ul class="ue-tick">
-    <li><b>資料我先幫你核對</b>：身分證、存摺封面、菜單、營業登記，傳給我後我先檢查有沒有缺漏、拍歪或模糊，不用等平台退件才知道</li>
-    <li><b>不確定的欄位我幫你判斷</b>：沒有統編或僅有稅籍登記怎麼填、不用開發票要不要勾、沒有食品業者登錄字號怎麼辦，直接問我</li>
-    <li><b>菜單我先幫你看過</b>：品項名稱、分類、售價怎麼放顧客比較好懂，上傳前先調整</li>
-    <li><b>拍照時間我幫你喬</b>：避開你的尖峰時段，並提醒你拍照前要準備哪幾道餐點</li>
-    <li><b>平板到了，我陪你開機</b>：第一次接單怎麼按、接單時限要注意什麼，先講清楚，不讓你第一天就漏單</li>
-    <li><b>一個窗口到底</b>：資料、拍照、平板、上線，都問同一個人（另有配合的熊貓資深業務可同步協助）</li>
-  </ul>
-</section>
-
-<section id="steps" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
-  <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #0B6B3D; letter-spacing: 0.08em">HOW IT WORKS</p>
-  <h2 class="ue-sec-title" style="margin: 0 0 36px; font-size: 36px; line-height: 1.35; font-weight: 900">合作流程</h2>
-  <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
-    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
-      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">1</span>
-      <span style="font-size: 19px; font-weight: 700">加 LINE 聊聊</span>
-      <span style="font-size: 15px; color: #4A5D52">先了解你的店和需求</span>
-    </li>
-    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
-      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">2</span>
-      <span style="font-size: 19px; font-weight: 700">我幫你送申請</span>
-      <span style="font-size: 15px; color: #4A5D52">資料準備有問題直接問</span>
-    </li>
-    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
-      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">3</span>
-      <span style="font-size: 19px; font-weight: 700">安排拍照、寄送平板</span>
-      <span style="font-size: 15px; color: #4A5D52">配合你方便的時間安排</span>
-    </li>
-    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
-      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">4</span>
-      <span style="font-size: 19px; font-weight: 700">正式上線，我持續跟進</span>
-      <span style="font-size: 15px; color: #4A5D52">上線後有問題隨時找我</span>
-    </li>
-  </ol>
-</section>
-
-<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px; display: flex; flex-wrap: wrap; gap: 24px">
-  <div style="flex: 1 1 420px; min-width: 0; background: #FFF4CC; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 12px">
-    <h2 style="margin: 0; font-size: 26px; font-weight: 900">已經是合作店家？</h2>
-    <p style="margin: 0; font-size: 17px; color: #3D3415">身邊有開店的朋友、同行、隔壁攤？推薦新店家加入，有推薦獎勵金計畫。想了解怎麼參加，直接加公務機 LINE（0966790286）找我。</p>
-  </div>
-  <div style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8DF; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 14px">
-    <h2 style="margin: 0; font-size: 26px; font-weight: 900">服務範圍</h2>
-    <p style="margin: 0; font-size: 17px; color: #3A4D42">全台店家都可以找我。限時優惠目前適用：</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px">
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">台南</span>
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">彰化</span>
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">南投</span>
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">雲林</span>
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">嘉義</span>
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">屏東</span>
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">宜蘭</span>
-      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">苗栗</span>
-    </div>
+  <div class="ue-cta-row"><a class="l" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">💬 加 LINE 問我的店適不適用</a><a class="x" href="#quiz-sec">下一步：1 分鐘健檢 ↓</a></div>
   </div>
 </section>
 
@@ -1011,9 +964,9 @@
 <section id="quiz-sec" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
   <div class="ue-quiz-card">
     <div id="ue-q-intro">
-      <p style="font-size: 14px; font-weight: 700; color: var(--green); letter-spacing: .08em; margin: 0 0 6px">READINESS CHECK · 外送上架準備度健檢</p>
-      <h2 style="font-size: 32px; line-height: 1.35; margin: 0 0 12px; font-weight: 900">你的店，準備好做外送了嗎？</h2>
-      <p style="color: var(--muted); font-size: 17px; margin: 0 0 22px">8 個問題，大約 1 分鐘。做完會得到你的店專屬的上架建議清單。</p>
+      <p class="ue-eyebrow">② 1 分鐘健檢</p>
+      <h2 style="font-size: 32px; line-height: 1.35; margin: 0 0 12px; font-weight: 900">做外送會不會白忙？8 題先幫你看清楚</h2>
+      <p style="color: var(--muted); font-size: 17px; margin: 0 0 22px"><b style="color:#0B6B3D">約 1 分鐘、不用留個資</b>，做完馬上拿到你的店專屬上架建議清單。</p>
       <button type="button" onclick="ueStartQuiz()" style="background: var(--green); color: #fff; border: none; border-radius: 12px; padding: 14px 32px; font: inherit; font-size: 17px; font-weight: 700; cursor: pointer">開始健檢 →</button>
     </div>
 
@@ -1035,7 +988,7 @@
       <h3 style="font-size: 21px; margin: 24px 0 0; font-weight: 700">你的專屬建議清單</h3>
       <ul class="ue-tips" id="ue-q-tips"></ul>
       <div id="ue-q-offer" class="ue-hidden" style="background: var(--yellow); border-radius: 14px; padding: 16px 18px; font-size: 16px; margin-bottom: 20px; font-weight: 500">
-        🌟 你的店在限時優惠縣市！<strong>2026/12/31 前申請</strong>，可以享有 <strong>試用 12 個月超低優惠、免啟用費（收到第一張訂單才起算，先申請先保留）、免費拍照／AI修圖與免費平板</strong>。
+        🌟 你的店在限時優惠縣市！<strong>2026/12/31 前申請</strong>，可以享有 <strong>試用 12 個月超低優惠、免啟用費（收到第一張訂單才起算）、免費拍照／AI修圖與免費平板</strong>。
       </div>
       <div style="background: var(--dark); color: #fff; border-radius: 18px; padding: 28px 24px; text-align: center">
         <h3 style="font-size: 22px; margin: 0 0 8px; font-weight: 700">想要更完整的評估？</h3>
@@ -1052,16 +1005,15 @@
   </div>
 </section>
 
-
 <!-- 56-ZONE KML MAP & COMPLIANT PRICING CALCULATOR IN CLAUDE PALETTE -->
 <section id="tools-sec" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
-  <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #0B6B3D; letter-spacing: 0.08em">INTERACTIVE TOOLS · 外送範圍秒查＆定價反推工具</p>
-  <h2 class="ue-sec-title" style="margin: 0 0 12px; font-size: 34px; line-height: 1.35; font-weight: 900">服務範圍秒查 ＆ 上架定價反推計算機</h2>
-  <p style="margin: 0 0 28px; font-size: 17px; color: #4A5D52; max-width: 720px">輸入門市地址立即比對全台 56 個外送營運區，並用定價公式快速試算建議上架售價。</p>
+  <p class="ue-eyebrow">③ 查外送範圍 ＋ ④ 試算售價</p>
+  <h2 class="ue-sec-title" style="margin: 0 0 10px; font-size: 34px; line-height: 1.35; font-weight: 900">外送送得到你的店嗎？上架要賣多少才不虧？</h2>
+  <p class="ue-hook-sub">輸入地址秒查外送範圍；輸入店內實拿價，自動反推外送建議售價。</p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
     <!-- KML Map Card -->
-    <div style="background: #FFFFFF; border: 1px solid #E2E8DF; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+    <div id="zone-card" style="background: #FFFFFF; border: 1px solid #E2E8DF; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap">
         <span style="font-size: 14px; font-weight: 700; color: #0B6B3D; background: #E6F2EA; padding: 5px 12px; border-radius: 999px">全台 56 區 KML 邊界比對</span>
         <span style="font-size: 14px; color: #4A5D52">可輸入地址或直接點擊地圖</span>
@@ -1076,7 +1028,7 @@
     </div>
 
     <!-- Pricing Calculator Card -->
-    <div style="background: #FFFFFF; border: 1px solid #E2E8DF; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 16px; justify-content: space-between">
+    <div id="calc-card" style="background: #FFFFFF; border: 1px solid #E2E8DF; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 16px; justify-content: space-between">
       <div style="display: flex; flex-direction: column; gap: 14px">
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap">
           <span style="font-size: 14px; font-weight: 700; color: #5A4500; background: #FFF4CC; padding: 5px 12px; border-radius: 999px">反推公式：目標實拿 ÷ (1 - 費率%)</span>
@@ -1110,21 +1062,94 @@
       </div>
     </div>
   </div>
+  <div class="ue-cta-row"><a class="l" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">💬 加 LINE 問 Serena</a><a class="x" href="#why">下一步：為什麼找我 ↓</a></div>
+</section>
+
+<section id="why" style="max-width: 1120px; margin: 0 auto; padding: 84px 24px 32px">
+  <p class="ue-eyebrow">⑤ 為什麼找我</p>
+  <h2 class="ue-sec-title" style="margin: 0 0 10px; font-size: 36px; line-height: 1.35; font-weight: 900">自己申請常卡關？有人陪跑差很多</h2>
+  <p class="ue-hook-sub" style="margin-bottom:30px">送件、拍照、平板、上線後，都是同一個人幫你顧。</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
+      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">01</span>
+      <h3 style="margin: 0; font-size: 22px; font-weight: 700">一次搞定，不用找好幾個人</h3>
+      <p style="margin: 0; font-size: 17px; color: #3A4D42">外送上架＋LINE Pay 收款一個窗口；另有<strong>配合的熊貓資深業務</strong>，雙平台都有人對接。</p>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
+      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">02</span>
+      <h3 style="margin: 0; font-size: 22px; font-weight: 700">懂線上經營，不只是送件</h3>
+      <p style="margin: 0; font-size: 17px; color: #3A4D42">做過品牌電商顧問，照片、菜單、價格怎麼放，顧客才會下單，我幫你看。</p>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
+      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">03</span>
+      <h3 style="margin: 0; font-size: 22px; font-weight: 700">上線後，找得到人</h3>
+      <p style="margin: 0; font-size: 17px; color: #3A4D42">有問題直接 LINE 我（0966790286），不用自己排客服。</p>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #E2E8DF">
+      <span style="font-size: 40px; font-weight: 900; color: #CFE3D6; line-height: 1">04</span>
+      <h3 style="margin: 0; font-size: 22px; font-weight: 700">我自己就是重度外送顧客</h3>
+      <p style="margin: 0; font-size: 17px; color: #3A4D42">南部第一批外送使用者，顧客打開 App 在看什麼，我很清楚。</p>
+    </div>
+  </div>
+</section>
+
+<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
+  <p class="ue-eyebrow">✋ 我幫你做的事</p>
+  <h2 class="ue-sec-title" style="margin: 0 0 10px; font-size: 34px; line-height: 1.35; font-weight: 900">不想被退件、來回補資料？這些我先幫你擋掉</h2>
+  <p class="ue-hook-sub">你顧好店，繁瑣的確認交給我。</p>
+  <ul class="ue-tick">
+    <li><b>資料我先幫你核對</b>：身分證、存摺封面、菜單、營業登記先檢查，不等平台退件 <span class="id-note">🔒 可加註「僅供 Uber Eats 外送合作申請使用」</span></li>
+    <li><b>不確定的欄位我幫你判斷</b>：沒統編、不開發票、沒食品登錄字號怎麼填，直接問我</li>
+    <li><b>菜單我先幫你看過</b>：品項、分類、售價怎麼放顧客才好懂</li>
+    <li><b>拍照時間我幫你喬</b>：避開尖峰，先提醒要準備哪幾道</li>
+    <li><b>平板到了，我陪你開機</b>：第一次接單怎麼按、時限要注意什麼，先講清楚</li>
+    <li><b>一個窗口到底</b>：資料、拍照、平板、上線都問同一個人</li>
+  </ul>
+  <div class="ue-cta-row"><a class="l" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">💬 加 LINE 問 Serena</a><a class="b" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊聊</a><a class="f" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a><a class="x" href="#steps">下一步：流程＆資料 ↓</a></div>
+  <p class="ue-cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
+</section>
+
+<section id="steps" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
+  <p class="ue-eyebrow">⑥ 流程＆資料</p>
+  <h2 class="ue-sec-title" style="margin: 0 0 10px; font-size: 36px; line-height: 1.35; font-weight: 900">4 步就上線，你只要顧好店</h2>
+  <p class="ue-hook-sub" style="margin-bottom:30px">加 LINE → 我送申請 → 拍照＋寄平板 → 上線後持續跟進。</p>
+  <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
+      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">1</span>
+      <span style="font-size: 19px; font-weight: 700">加 LINE 聊聊</span>
+      <span style="font-size: 15px; color: #4A5D52">先了解你的店和需求</span>
+    </li>
+    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
+      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">2</span>
+      <span style="font-size: 19px; font-weight: 700">我幫你送申請</span>
+      <span style="font-size: 15px; color: #4A5D52">資料準備有問題直接問</span>
+    </li>
+    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
+      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">3</span>
+      <span style="font-size: 19px; font-weight: 700">安排拍照、寄送平板</span>
+      <span style="font-size: 15px; color: #4A5D52">配合你方便的時間安排</span>
+    </li>
+    <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E2E8DF">
+      <span style="width: 44px; height: 44px; border-radius: 999px; background: #0B6B3D; color: #FFFFFF; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center">4</span>
+      <span style="font-size: 19px; font-weight: 700">正式上線，我持續跟進</span>
+      <span style="font-size: 15px; color: #4A5D52">上線後有問題隨時找我</span>
+    </li>
+  </ol>
 </section>
 
 <!-- PREP CHECKLIST & COPYABLE FORM -->
 <section id="prep-sec" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
-  <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #0B6B3D; letter-spacing: 0.08em">CHECKLIST</p>
-  <h2 class="ue-sec-title" style="margin: 0 0 12px; font-size: 34px; line-height: 1.35; font-weight: 900">備齊資料清單</h2>
-  <p style="margin: 0 0 24px; font-size: 17px; color: #4A5D52">聊過之後，你只需要準備下面這些。我會陪你一項一項核對，有不清楚的隨時問我。</p>
+  <p class="ue-eyebrow">📋 要準備的資料</p>
+  <h2 class="ue-sec-title" style="margin: 0 0 10px; font-size: 34px; line-height: 1.35; font-weight: 900">資料一次備齊，上線最快</h2>
+  <p class="ue-hook-sub">先存起來，聊過之後照著準備就好；我會一項一項幫你核對。</p>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
     <details class="ue-faq" open><summary>🔥 基本資料</summary><ul><li>餐廳上架 APP 名稱</li><li>負責人姓名</li><li>負責人身分證字號</li><li>負責人行動電話</li><li>市內電話（沒有請填「無」）</li><li>負責人電子信箱</li></ul></details>
     <details class="ue-faq" open><summary>🏠 地址與營業資訊</summary><ul><li>餐廳地址</li><li>平板寄送地址（可同上）</li><li>餐廳營業時間</li><li>公休日</li><li>平均備餐時間（分鐘）</li></ul></details>
     <details class="ue-faq" open><summary>🧾 營業登記與法規資訊</summary><ul><li>營業登記名稱（沒有請填「無」）</li><li>是否開立統一發票（沒有請填「無」）</li><li>是否有統一編號（沒有請填「無」）</li><li>食品業者登錄字號</li><li>肉品來源國家（豬／牛）</li></ul></details>
-    <details class="ue-faq" open><summary>📷 拍照回傳資料</summary><ul><li>身份證正面照片</li><li>匯款帳戶封面</li><li>店內價菜單</li><li>商業手抄本（沒有統編請忽略）</li></ul></details>
+    <details class="ue-faq" open><summary>📷 拍照回傳資料</summary><ul><li>身分證正面照片<br><span class="id-note">🔒 可加註「僅供 Uber Eats 外送合作申請使用」</span></li><li>匯款帳戶封面（存摺）<br><span class="id-note">🔒 可加註「僅供 Uber Eats 外送合作申請使用」</span></li><li>店內價菜單</li><li>商業登記抄本（沒有統編請忽略）</li></ul></details>
   </div>
   <div style="background: #FFF4CC; border: 1.5px dashed #D4A72C; border-radius: 16px; padding: 14px 18px; font-size: 15px; margin-top: 16px; color: #3D3415">
-    🔒 身分證字號與身分證照片屬於個人資料，請只透過與我的<b>私訊（公務機 LINE：0966790286）</b>提供，不要貼在公開留言、社群貼文或群組裡。
+    🔒 身分證字號與身分證照片屬於個人資料，請只透過與我的<b>私訊（公務機 LINE：0966790286）</b>提供，不要貼在公開留言、社群貼文或群組裡。證件與存摺照片上可以直接加註<b>「僅供 Uber Eats 外送合作申請使用」</b>，更安心。
   </div>
   <div style="background: #FFFFFF; border: 1px solid var(--line); border-radius: 20px; padding: 28px; margin-top: 20px">
     <h3 style="margin: 0 0 6px; font-size: 20px; font-weight: 700">想直接填寫？複製空白表單</h3>
@@ -1152,24 +1177,25 @@
 肉品來源國家（豬／牛）：
 
 📷 拍照回傳資料
-⭐️ 身份證正面照片
-⭐️ 匯款帳戶封面
+⭐️ 身分證正面照片（可加註「僅供 Uber Eats 外送合作申請使用」）
+⭐️ 匯款帳戶封面（可加註「僅供 Uber Eats 外送合作申請使用」）
 ⭐️ 店內價菜單
-⭐️ 商業手抄本（沒有統編請忽略）</textarea>
+⭐️ 商業登記抄本（沒有統編請忽略）</textarea>
     <div style="margin-top: 14px; display: flex; align-items: center; gap: 12px">
       <button type="button" id="ue-cp-btn" onclick="ueCopyTemplate()" style="background: var(--green); color: #fff; border: none; border-radius: 999px; padding: 12px 24px; font: inherit; font-weight: 700; cursor: pointer">📋 複製空白表單</button>
       <span id="ue-cp-ok" style="display: none; font-weight: 700; color: var(--green)">已複製 ✓</span>
     </div>
   </div>
+  <div class="ue-cta-row"><a class="l" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">💬 填好傳 LINE 給我</a><a class="x" href="#faq-sec">下一步：常見問題 ↓</a></div>
 </section>
 
 <!-- 12 Q&As FROM SITE_GUIDE.MD -->
 <section id="faq-sec" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px">
-  <p style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #0B6B3D; letter-spacing: 0.08em">FAQ · 12 大常見問題</p>
-  <h2 class="ue-sec-title" style="margin: 0 0 12px; font-size: 34px; line-height: 1.35; font-weight: 900">外送店家常見 Q&amp;A</h2>
-  <p style="margin: 0 0 24px; font-size: 17px; color: #4A5D52">整理自官方商家指南，改寫成店家看得懂的口語說明。</p>
+  <p class="ue-eyebrow">⑦ 常見問題</p>
+  <h2 class="ue-sec-title" style="margin: 0 0 10px; font-size: 34px; line-height: 1.35; font-weight: 900">接單、收款、改菜單？12 題一次看懂</h2>
+  <p class="ue-hook-sub">整理自官方商家指南，用老闆聽得懂的話說明。</p>
 
-  <details class="ue-faq"><summary>Q1：申請要準備什麼資料？</summary><p>身分驗證文件、台幣銀行帳戶、發票設定（不開發票的店家也要填），以及菜單檔案（PDF 或 JPG，避免手寫）。銀行帳戶和發票設定完成後，帳號才會開通。（若僅有稅籍登記／設籍課稅而免辦商業登記的小店或攤商，也可以先傳給我幫你確認審核文件。）</p></details>
+  <details class="ue-faq"><summary>Q1：申請要準備什麼資料？</summary><p>身分驗證文件（可加註「僅供 Uber Eats 外送合作申請使用」）、台幣銀行帳戶、發票設定（不開發票的店家也要填），以及菜單檔案（PDF 或 JPG，避免手寫）。銀行帳戶和發票設定完成後，帳號才會開通。（若僅有稅籍登記／設籍課稅而免辦商業登記的小店或攤商，也可以先傳給我幫你確認審核文件。）</p></details>
   <details class="ue-faq"><summary>Q2：從申請到上線要經過哪些步驟？</summary><p>線上簽約 → 提交菜單、預約拍照 → 後台上傳資料 → 菜單建置 → 寄送平板 → 開機接單。平板寄出後大約 2 個工作天送達。每一步我都會陪你處理。</p></details>
   <details class="ue-faq"><summary>Q3：拍照怎麼安排？</summary><p>攝影師到店拍 5 道餐點，加 1 張封面合照，拍攝前一天會先電話確認。不想特別準備餐點，也可以改用 AI 免費修圖。照片會在店家接到第一筆訂單、完成滿意度調查後寄給你，照片不能用在其他競業外送平台。</p></details>
   <details class="ue-faq"><summary>Q4：平板會收到什麼？壞了怎麼辦？</summary><p>平板、充電器、支架、門貼、取餐牌和行銷小物。平板破損可聯絡廠商客服安排換機，換機期間可以先用手機下載接單 App。</p></details>
@@ -1181,17 +1207,49 @@
   <details class="ue-faq"><summary>Q10：顧客取消訂單會影響收入嗎？</summary><p>店家接單前取消，不影響收入。店家接單後才取消，仍會撥付該筆訂單扣除服務費後的款項。</p></details>
   <details class="ue-faq"><summary>Q11：顧客打電話來問訂單怎麼辦？</summary><p>請顧客透過 App 回報，由平台客服處理。店家專屬的客服專線不要提供給顧客。</p></details>
   <details class="ue-faq"><summary>Q12：怎麼讓訂單變多？</summary><p>官方建議三個方向：維持上線率、接單快、備餐時間穩定，這些會影響評分和曝光；放上好看的餐點照片；包裝做好、出餐前核對內容。上線後我也會陪你看哪裡可以再調整。</p></details>
+  <div class="ue-cta-row"><a class="l" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">💬 還有問題？LINE 問我</a><a class="x" href="#ue-final">下一步：直接聯絡我 ↓</a></div>
 </section>
 
-<section style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 80px">
-  <div style="background: #0F2E1F; color: #FFFFFF; border-radius: 28px; padding: 64px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<section id="reward" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 32px; display: flex; flex-wrap: wrap; gap: 24px">
+  <div style="flex: 1 1 420px; min-width: 0; background: #FFF4CC; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 12px">
+    <p class="ue-eyebrow" style="align-self:flex-start;margin:0">🤝 已經是合作店家？</p>
+    <h2 style="margin: 0; font-size: 26px; line-height: 1.5; font-weight: 900">推薦開店朋友加入，<br>領<span class="ue-reward-word">獎勵金</span></h2>
+    <p style="margin: 0; font-size: 18px; font-weight: 800; color: #0B5A33">每成功推薦一間店就有一份獎勵金，推越多、領越多！</p>
+    <div class="ue-reward-steps" aria-label="推薦間數與獎勵金份數">
+      <div><b>1 間</b><span class="arr">↓</span><br><strong>1 份獎勵金</strong></div>
+      <div><b>3 間</b><span class="arr">↓</span><br><strong>3 份獎勵金</strong></div>
+      <div><b>N 間</b><span class="arr">↓</span><br><strong>N 份獎勵金</strong></div>
+    </div>
+    <p style="margin: 0; font-size: 16px; color: #3D3415">身邊有開店的朋友、同行、隔壁攤都可以推薦。<b>獎勵金金額加 LINE 私訊告訴你</b>。</p>
+    <div class="ue-cta-row" style="margin-top:6px"><a class="l" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">💬 加 LINE 問獎勵金</a></div>
+  </div>
+  <div style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8DF; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 14px">
+    <h2 style="margin: 0; font-size: 26px; font-weight: 900">服務範圍</h2>
+    <p style="margin: 0; font-size: 17px; color: #3A4D42">全台店家都可以找我。限時優惠目前適用：</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px">
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">台南</span>
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">彰化</span>
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">南投</span>
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">雲林</span>
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">嘉義</span>
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">屏東</span>
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">宜蘭</span>
+      <span style="background: #E6F2EA; color: #0B5A33; font-weight: 700; font-size: 15px; padding: 6px 14px; border-radius: 999px">苗栗</span>
+    </div>
+  </div>
+</section>
+
+<section id="ue-final" style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 80px">
+  <div class="ue-dark" style="background: #0F2E1F; color: #FFFFFF; border-radius: 28px; padding: 64px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
     <h2 style="margin: 0; font-size: 36px; line-height: 1.35; font-weight: 900">想知道你的店適不適合做外送？</h2>
     <p style="margin: 0; font-size: 18px; color: #C9DBCF">加 LINE 聊聊，我先幫你看看（另有配合的熊貓資深業務，雙平台一次幫你對接）</p>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center">
       <a href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener" style="text-decoration: none; background: #3DDC84; color: #08241A; font-weight: 700; font-size: 18px; padding: 16px 36px; border-radius: 12px; min-height: 52px; display: inline-flex; align-items: center">💬 加 LINE：0966790286</a>
       <a data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener" style="text-decoration: none; background: #FFFFFF; color: #0F2E1F; font-weight: 700; font-size: 18px; padding: 16px 32px; border-radius: 12px; min-height: 52px; display: inline-flex; align-items: center">📅 預約 30 分鐘聊聊</a>
+      <a data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener" style="text-decoration: none; background: transparent; color: #FFFFFF; border: 1.5px dashed #9FC3AE; font-weight: 700; font-size: 18px; padding: 16px 28px; border-radius: 12px; min-height: 52px; display: inline-flex; align-items: center">📝 留下聯絡方式，我主動聯繫你</a>
       <a href="tel:0966790286" style="text-decoration: none; border: 1.5px solid #6E8F7C; color: #FFFFFF; font-weight: 700; font-size: 18px; padding: 16px 32px; border-radius: 12px; min-height: 52px; display: inline-flex; align-items: center">📞 撥打 0966-790-286</a>
     </div>
+    <p class="ue-cta-hint" style="margin:0"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
     <a href="mailto:serena.sun@uber.com" style="color: #C9DBCF; font-size: 15px">或寄信 serena.sun@uber.com</a>
   </div>
   <p style="margin: 24px 0 8px; font-size: 13px; color: #5A6B61; text-align: center">實際優惠、適用資格、曝光範圍及合作內容依官方活動與店家條件為準。</p>
@@ -1206,7 +1264,8 @@
 <span class="eyebrow">LINE Pay 申辦諮詢</span>
 <h2 class="hero-h">客人掃碼就能付款，<br><mark>申辦有總公司專員帶你走</mark></h2>
 <p class="lead">我曾任職於 LINE Pay 總公司，擔任星種子業務代表，深入了解申辦流程與每個環節的眉角。透過我介紹申辦，對接的是同樣來自總公司的專業團隊——從送件、審核到開通，都有總公司的人直接跟進，一條龍服務，不用擔心問題找不到人。</p>
-<div class="btns"><a class="btn" data-line="加 LINE 詢問申辦" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 詢問申辦（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊聊</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<div class="btns"><a class="btn" data-line="加 LINE 詢問申辦" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 詢問申辦（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊聊</a><a class="btn o btn-form" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<p class="cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
 </div></div>
 
 <section><div class="wrap">
@@ -1247,13 +1306,13 @@
 <h2>申辦需要準備什麼？</h2>
 <p class="sub">加我 LINE 之後，我會傳給你完整的申辦說明與表單。</p>
 <ol class="steps">
-<li><h3>負責人身分證（正反面）</h3><p>請使用最新版本，可加註「僅供 LINE Pay 申請使用」。</p></li>
-<li><h3>任一銀行或郵局的存摺封面</h3><p>戶名須與負責人姓名或營業登記一致。不接受：LINE Bank、將來銀行、農會、漁會、信用合作社。</p></li>
+<li><h3>負責人身分證（正反面）</h3><p>請使用最新版本。<br><span class="id-note">🔒 可加註「僅供 LINE Pay 申請使用」</span></p></li>
+<li><h3>任一銀行或郵局的存摺封面</h3><p>戶名須與負責人姓名或營業登記一致。不接受：LINE Bank、將來銀行、農會、漁會、信用合作社。<br><span class="id-note">🔒 可加註「僅供 LINE Pay 申請使用」</span></p></li>
 <li><h3>店內與店外照片或攤位照</h3><p>店外需拍到招牌與門牌。</p></li>
 <li><h3>價目表</h3><p>提供至少三個品項及價格範圍供審核使用，不需正式設計，可用打字列出。</p></li>
 <li><h3>手機電信帳單</h3><p>統編戶免附。請提供「電子帳單的明細抬頭頁」，需包含姓名與手機號碼，可從各大電信 App 或官網下載或截圖。</p></li>
 </ol>
-<div class="note">🔒 身分證等個人資料，請只透過與我的<b>私訊</b>提供，不要貼在公開留言或群組裡。</div>
+<div class="note">🔒 身分證等個人資料，請只透過與我的<b>私訊</b>提供，不要貼在公開留言或群組裡。證件與存摺照片上可以直接加註<b>「僅供 LINE Pay 申請使用」</b>，更安心。</div>
 </div></section>
 
 <section class="alt"><div class="wrap">
@@ -1279,7 +1338,8 @@
 <span class="eyebrow">菲律賓遊學 · 親身經歷分享</span>
 <h2 class="hero-h">你不是英文不好，<br>你只是<mark>還沒開口過</mark>。</h2>
 <p class="lead">台灣人學了十幾年英文，單字量其實不差。差的只是那一口氣——開口的勇氣。我也是。直到去了菲律賓，才知道自己其實可以。</p>
-<div class="btns"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聽我分享</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<div class="btns"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聽我分享</a><a class="btn o btn-form" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<p class="cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
 </div></div>
 
 <section><div class="wrap">
@@ -1332,7 +1392,8 @@
 </ul></div></section>
 
 <section><div class="wrap"><div class="cta"><h2>想多了解菲律賓遊學？</h2><p>行程規劃、出發前該準備什麼——都可以找我聊，我把我知道的都告訴你。</p>
-<div class="btns" style="justify-content:center"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" style="background:#fff;color:#0b3550;border-color:#0b3550" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聽我分享</a><a class="btn o" style="background:#fff;color:#0b3550;border-color:#0b3550" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<div class="btns" style="justify-content:center"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" style="background:#fff;color:#0b3550;border-color:#0b3550" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聽我分享</a><a class="btn o btn-form" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a><a class="btn o" style="background:#fff;color:#0b3550;border-color:#0b3550" href="tel:0966790286">📞 撥打 0966-790-286</a></div>
+<p class="cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
 <p class="fine" style="color:#0b3550;margin-top:16px">不收費，就是聊聊，沒有壓力</p></div></div></section>
 
 <div class="wrap"><div class="disc">本站為芷琁（Serena）的個人經營頁面，內容為個人專業服務介紹，非任何平台或品牌的官方網站。實際優惠、適用資格、曝光範圍及合作內容依官方活動與店家條件為準。</div></div>
@@ -1352,7 +1413,8 @@
 <p>這幾份工作讓我看過很多店家的不同階段：剛開始想試試看線上接單的、想找新客源的、想把熟客留住的。所以我不會只跟你談一個平台，而是先了解你現在的狀況，再一起找出適合的下一步。</p>
 <p>外送、金流、線上經營，有問題都可以直接問我。</p>
 <div class="chips"><span>外送上架</span><span>LINE Pay</span><span>品牌經營</span><span>會員回購</span></div>
-<div class="btns" style="margin-top:26px"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊聊</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a><a class="btn o" href="mailto:serena.sun@uber.com">✉️ 寄信給我</a></div>
+<div class="btns" style="margin-top:26px"><a class="btn" data-line="加 LINE 聊聊" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊聊（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊聊</a><a class="btn o btn-form" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a><a class="btn o" href="tel:0966790286">📞 撥打 0966-790-286</a><a class="btn o" href="mailto:serena.sun@uber.com">✉️ 寄信給我</a></div>
+<p class="cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
 </div></section>
 
 <section id="card"><div class="wrap">
@@ -1381,7 +1443,8 @@
 <h2>🤝 異業合作，歡迎一起聊聊</h2>
 <p>不論你是金流、POS、餐飲設備、食材、行銷、保險，或其他產業的業務夥伴，只要我們一樣在服務餐廳老闆，都非常歡迎一起交流、互相引薦。</p>
 <p>每位老闆需要的幫忙都不只一種。我們各自把擅長的做好，再把彼此介紹給需要的店家，老闆省事，我們也一起成長——這就是我想要的互惠合作。有想法就直接找我，先喝杯咖啡聊聊也很好 ☕</p>
-<div class="btns" style="margin-top:22px"><a class="btn" data-line="加 LINE 聊合作" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊合作（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊合作</a></div>
+<div class="btns" style="margin-top:22px"><a class="btn" data-line="加 LINE 聊合作" href="https://line.me/ti/p/yBFkTTbwJ7" target="_blank" rel="noopener">加 LINE 聊合作（0966790286）</a><a class="btn o" data-book href="https://calendar.app.google/Z6xkHL7BuwVXaVJz5" target="_blank" rel="noopener">📅 預約 30 分鐘聊合作</a><a class="btn o btn-form" data-form href="https://forms.gle/HYcdoDqFP81JExbi8" target="_blank" rel="noopener">📝 留下聯絡方式，我主動聯繫你</a></div>
+<p class="cta-hint"><span>🎧 不用開鏡頭，用語音線上聊聊也可以</span><span>📝 不想加 LINE 也沒關係，填個基本資料就好</span></p>
 </div></section>
 
 <div class="wrap"><div class="disc">本站為芷琁（Serena）的個人經營頁面，內容為個人專業服務介紹，非任何平台或品牌的官方網站。實際優惠、適用資格、曝光範圍及合作內容依官方活動與店家條件為準。</div></div>
@@ -1623,6 +1686,30 @@ async function checkAddress() {
     st.innerText = '查詢發生網路錯誤，請直接點擊下方地圖確認！';
   }
 }
+</script>
+<script>
+(function(){
+  function hdr(){ var h=document.querySelector('.site-header'); return h? h.offsetHeight:0; }
+  function setVar(){ document.documentElement.style.setProperty('--hdr-h', hdr()+'px'); }
+  setVar(); window.addEventListener('resize', setVar); window.addEventListener('load', setVar);
+  var nav=document.querySelector('.ue-jump'); if(!nav) return;
+  var bar=nav.closest('.ue-subnav-bar')||nav.closest('header');
+  var links=[].slice.call(nav.querySelectorAll('a[data-jump]')); var lock=0;
+  function off(){ var o=(bar? bar.getBoundingClientRect().height:0); if(bar && bar.classList.contains('ue-subnav-bar')) o+=hdr(); return o+12; }
+  links.forEach(function(a){ a.addEventListener('click',function(e){
+    var el=document.getElementById(a.getAttribute('data-jump')); if(!el) return;
+    e.preventDefault(); lock=Date.now()+1200; links.forEach(function(x){x.classList.toggle('on',x===a);});
+    var y=el.getBoundingClientRect().top+window.pageYOffset-off();
+    window.scrollTo({top:y,behavior:'smooth'});
+  });});
+  function spy(){
+    if(!nav.offsetParent || Date.now()<lock) return;
+    var cur=null, lim=off()+40;
+    var curTop=-1e9; links.forEach(function(a){ var el=document.getElementById(a.getAttribute('data-jump')); if(!el) return; var t=el.getBoundingClientRect().top; if(t<=lim && (cur===null || t>curTop+5)){ cur=a; curTop=t; } });
+    links.forEach(function(a){ var on=(a===cur); if(a.classList.contains('on')!==on){ a.classList.toggle('on',on); if(on){ nav.scrollTo({left:a.offsetLeft-(nav.clientWidth-a.offsetWidth)/2,behavior:'smooth'}); } } });
+  }
+  window.addEventListener('scroll',spy,{passive:true}); spy();
+})();
 </script>
 <script>
 (function(){
