@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive">
   <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
@@ -37,18 +37,122 @@
 </head>
 <body class="text-slate-800 min-h-screen flex flex-col">
   <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">篩</div>
-        <div>
-          <div class="flex items-center gap-2">
-            <h1 class="text-base sm:text-lg font-bold text-slate-900">社群截圖店家開發篩選系統</h1>
-            <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">🔒 純本機私密運算</span>
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 min-w-0">
+        <div class="w-8 h-8 shrink-0 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">篩</div>
+        <h1 class="text-sm sm:text-base font-bold text-slate-900 truncate">店家開發篩選</h1>
+        <span class="hidden sm:inline text-[11px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">🔒 純本機</span>
+      </div>
+      <div class="hidden md:flex items-center gap-2">
+        <button onclick="exportCleanCSV()" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700">⬇ 匯出 CSV</button>
+        <button onclick="copyCleanLeadsToClipboard()" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-indigo-600 text-white hover:bg-indigo-700">📋 複製可開發名單</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl w-full mx-auto px-3 sm:px-6 py-3 sm:py-5 space-y-3 sm:space-y-4 flex-1 pb-24 md:pb-6">
+      <div id="uploadArea" class="grid grid-cols-1 md:grid-cols-12 gap-3 scroll-mt-20">
+        <label id="dropZone" for="screenshotInput"
+          class="md:col-span-7 flex flex-col justify-center bg-white rounded-xl border-2 border-dashed border-blue-300 p-3 sm:p-4 text-center transition cursor-pointer hover:border-blue-500 active:bg-blue-50/40 shadow-sm">
+          <input type="file" id="screenshotInput" accept="image/*" multiple class="sr-only" onchange="handleFiles(this.files)" />
+          <div class="space-y-1.5">
+            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 mx-auto flex items-center justify-center text-xl">📸</div>
+            <h3 class="text-sm font-bold text-slate-900">1. 點此從 iPhone 相簿選取社群截圖（可多選）</h3>
+            <p class="text-[11px] text-slate-500 leading-relaxed">
+              已內建<strong>自動裁切手機頂部時間電量、深色模式反轉、繁中去空白合字、全文掃描 3,698 筆內部品牌</strong>！電腦亦支援拖曳或 <kbd class="px-1 py-0.5 text-[10px] bg-slate-100 border border-slate-300 rounded">Ctrl+V</kbd> 貼圖。
+            </p>
           </div>
-          <p class="text-xs text-slate-500">1. 內部 PDF 名單與負責 AM 比對 · 2. 全台 KML 外送範圍座標判別 · 3. Google 地址上線查核</p>
+        </label>
+
+        <div class="md:col-span-5 bg-gradient-to-br from-indigo-50/80 to-white rounded-xl border border-indigo-200 p-3.5 shadow-sm flex flex-col justify-between space-y-2">
+          <div>
+            <div class="flex items-center justify-between gap-1">
+              <span class="text-xs font-bold text-indigo-950">📋 2. 貼上 IG 貼文 / iPhone 原況文字</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-semibold">100% 零誤差</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mt-0.5">
+              在 IG 複製貼文，或在 iPhone 截圖長按文字選「拷貝」貼到下方，<strong>免等待 OCR、支援懶人包一次抓多家店</strong>：
+            </p>
+          </div>
+          <textarea id="pasteCaptionInput" rows="3"
+            placeholder="貼上 IG/FB 貼文內容，或從 iPhone 截圖長按拷貝的店名與地址文字..."
+            class="w-full rounded-lg border border-indigo-200 bg-white p-2 text-xs outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+          <div class="flex items-center gap-1.5">
+            <button onclick="pasteFromClipboardAndParse()" class="flex-1 px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition shadow-xs">
+              📋 一鍵貼上並解析
+            </button>
+            <button onclick="parsePastedCaptionBox()" class="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition">
+              ⚡ 解析文字
+            </button>
+          </div>
         </div>
       </div>
-      <div class="flex flex-wrap items-center gap-2">
+
+      <div class="bg-white rounded-xl border border-slate-200 p-3 shadow-sm flex flex-wrap items-center gap-2">
+        <span class="text-xs font-semibold text-slate-700">單筆店家快速測試：</span>
+        <input id="quickName" type="text" placeholder="輸入店名（如：山川咖喱 或 路易莎）" class="flex-1 min-w-[140px] rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs outline-none" />
+        <input id="quickAddr" type="text" placeholder="輸入地址（如：台北市大安區敦化南路一段161巷22號）" class="flex-[1.5] min-w-[200px] rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs outline-none" />
+        <button onclick="addManualLead()" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-medium hover:bg-slate-800 transition">
+          ＋ 加入篩選
+        </button>
+      </div>
+
+      <div id="resultsCard" class="bg-white rounded-xl border border-slate-200 shadow-sm flex flex-col overflow-hidden scroll-mt-20"">
+        <div class="p-3.5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button onclick="setFilter('all')" id="tab-all" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white">
+              全部 (<span id="count-all">0</span>)
+            </button>
+            <button onclick="setFilter('pass')" id="tab-pass" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-emerald-50 text-emerald-800 hover:bg-emerald-100">
+              ✅ 可接洽開發 (<span id="count-pass">0</span>)
+            </button>
+            <button onclick="setFilter('blocked')" id="tab-blocked" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-rose-50 text-rose-800 hover:bg-rose-100">
+              ❌ 內部名單排除 (<span id="count-blocked">0</span>)
+            </button>
+            <button onclick="setFilter('out_of_zone')" id="tab-out_of_zone" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-purple-50 text-purple-800 hover:bg-purple-100">
+              🚫 外送範圍外 (<span id="count-out_of_zone">0</span>)
+            </button>
+            <button onclick="setFilter('live')" id="tab-live" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-amber-50 text-amber-800 hover:bg-amber-100">
+              ⚠️ 該地址已上線 (<span id="count-live">0</span>)
+            </button>
+            <button onclick="setFilter('mall')" id="tab-mall" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200">
+              🏬 百貨/商場排除 (<span id="count-mall">0</span>)
+            </button>
+            <label class="inline-flex items-center gap-1 text-[11px] text-slate-600 ml-1 cursor-pointer select-none">
+              <input id="showMallToggle" type="checkbox" onchange="renderTable()" class="rounded" /> 「全部」顯示百貨/商場櫃位
+            </label>
+          </div>
+          <button onclick="clearAllLeads()" class="text-xs text-slate-400 hover:text-rose-600">清空列表</button>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-semibold text-slate-500 uppercase">
+                <th class="py-2.5 px-3">截圖 / 來源</th>
+                <th class="py-2.5 px-3">辨識店名與地址（可微調）</th>
+                <th class="py-2.5 px-3">關卡 1：內部 PDF 名單</th>
+                <th class="py-2.5 px-3">關卡 2：全台外送範圍 (KML)</th>
+                <th class="py-2.5 px-3">關卡 3：Google 地址上線查核</th>
+                <th class="py-2.5 px-3 text-right">最終判定</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody" class="divide-y divide-slate-200 text-xs">
+              <tr>
+                <td colspan="6" class="py-12 text-center text-slate-400">
+                  目前尚無資料。請先在上方上傳截圖或貼上文字（內部 PDF 名單在下方「設定」載入），或點擊右上角「⚡ 載入範例實測」查看三重篩選效果。
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    <div class="pt-2 space-y-2">
+      <div class="text-xs font-bold text-slate-500 px-1">⚙️ 設定與工具（點開展開）</div>
+      <details class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <summary class="cursor-pointer px-4 py-3 text-sm font-bold text-slate-800 select-none">🧰 更多工具（地圖 / 今日批次 / iPhone 捷徑 / 範例）</summary>
+        <div class="px-4 pb-4 flex flex-wrap gap-2">
         <button onclick="openMapModal()" class="px-3 py-2 text-xs font-medium rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition">
           🗺️ 查看全台外送範圍地圖 (<span id="headerZoneCount">56</span> 區)
         </button>
@@ -67,23 +171,12 @@
         <button onclick="exportCleanCSV()" class="px-3.5 py-2 text-xs font-bold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition shadow-sm">
           ⬇ 匯出 CSV (含店名/社群帳號/電話/地址)
         </button>
-      </div>
-    </div>
-  </header>
+        </div>
+      </details>
 
-  <!-- iPhone Safari Quick Guide Banner -->
-  <div id="iosGuideBanner" class="bg-emerald-900 text-emerald-50 px-4 py-2.5 text-xs border-b border-emerald-800">
-    <div class="max-w-7xl mx-auto flex items-start sm:items-center justify-between gap-3">
-      <div class="leading-relaxed">
-        <span class="inline-block px-1.5 py-0.5 rounded bg-emerald-700 text-white font-bold mr-1.5">📱 iPhone 專屬升級</span>
-        <span>已升級 <strong>Threads 深色模式專用 OCR v3（12 張截圖實測 100% 命中店名與行政區）</strong>！若想<strong>「辨識完自動從 iPhone 相簿刪掉截圖」</strong>，請點右上角「<button onclick="openShortcutModal()" class="underline font-bold text-amber-200">🗑️ iPhone 辨識後自動刪截圖設定</button>」搭配 iOS 內建捷徑一鍵完成！</span>
-      </div>
-      <button onclick="dismissIosBanner()" class="shrink-0 px-2 py-1 rounded bg-emerald-800 hover:bg-emerald-700 text-emerald-100 text-[11px] font-medium">知道了 ✕</button>
-    </div>
-  </div>
-
-  <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1">
-    <aside class="lg:col-span-4 space-y-4">
+      <details class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <summary class="cursor-pointer px-4 py-3 text-sm font-bold text-slate-800 select-none">📄 內部不可接洽品牌名單（本機 PDF）</summary>
+        <div class="px-0 pb-1">
       <section class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-3">
         <div class="flex items-center justify-between">
           <h2 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
@@ -137,7 +230,11 @@
           </div>
         </details>
       </section>
-
+        </div>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <summary class="cursor-pointer px-4 py-3 text-sm font-bold text-slate-800 select-none">🗺️ 外送範圍 KML 設定</summary>
+        <div class="px-0 pb-1">
       <section class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-2.5">
         <div class="flex items-center justify-between">
           <h2 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
@@ -159,7 +256,11 @@
           </label>
         </div>
       </section>
-
+        </div>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <summary class="cursor-pointer px-4 py-3 text-sm font-bold text-slate-800 select-none">🔎 Google 上線查核設定</summary>
+        <div class="px-0 pb-1">
       <section class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-2.5">
         <div class="flex items-center justify-between">
           <h2 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
@@ -181,7 +282,11 @@
           <button onclick="setPlatformPreset('site:inline.app')" class="text-[11px] px-2 py-0.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700">inline 訂位</button>
         </div>
       </section>
-
+        </div>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <summary class="cursor-pointer px-4 py-3 text-sm font-bold text-slate-800 select-none">✨ 截圖 AI 視覺 / API Key 設定</summary>
+        <div class="px-0 pb-1">
       <section class="bg-white rounded-xl border border-indigo-200 p-4 shadow-sm space-y-2.5">
         <div class="flex items-center justify-between">
           <h2 class="text-sm font-bold text-slate-900 flex items-center gap-1.5">
@@ -227,101 +332,23 @@
           </details>
         </div>
       </section>
-    </aside>
-
-    <section class="lg:col-span-8 space-y-4 flex flex-col">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
-        <label id="dropZone" for="screenshotInput"
-          class="md:col-span-7 flex flex-col justify-center bg-white rounded-xl border-2 border-dashed border-blue-300 p-4 text-center transition cursor-pointer hover:border-blue-500 active:bg-blue-50/40 shadow-sm">
-          <input type="file" id="screenshotInput" accept="image/*" multiple class="sr-only" onchange="handleFiles(this.files)" />
-          <div class="space-y-1.5">
-            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 mx-auto flex items-center justify-center text-xl">📸</div>
-            <h3 class="text-sm font-bold text-slate-900">1. 點此從 iPhone 相簿選取社群截圖（可多選）</h3>
-            <p class="text-[11px] text-slate-500 leading-relaxed">
-              已內建<strong>自動裁切手機頂部時間電量、深色模式反轉、繁中去空白合字、全文掃描 3,698 筆內部品牌</strong>！電腦亦支援拖曳或 <kbd class="px-1 py-0.5 text-[10px] bg-slate-100 border border-slate-300 rounded">Ctrl+V</kbd> 貼圖。
-            </p>
-          </div>
-        </label>
-
-        <div class="md:col-span-5 bg-gradient-to-br from-indigo-50/80 to-white rounded-xl border border-indigo-200 p-3.5 shadow-sm flex flex-col justify-between space-y-2">
-          <div>
-            <div class="flex items-center justify-between gap-1">
-              <span class="text-xs font-bold text-indigo-950">📋 2. 貼上 IG 貼文 / iPhone 原況文字</span>
-              <span class="text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-800 font-semibold">100% 零誤差</span>
-            </div>
-            <p class="text-[11px] text-slate-600 mt-0.5">
-              在 IG 複製貼文，或在 iPhone 截圖長按文字選「拷貝」貼到下方，<strong>免等待 OCR、支援懶人包一次抓多家店</strong>：
-            </p>
-          </div>
-          <textarea id="pasteCaptionInput" rows="3"
-            placeholder="貼上 IG/FB 貼文內容，或從 iPhone 截圖長按拷貝的店名與地址文字..."
-            class="w-full rounded-lg border border-indigo-200 bg-white p-2 text-xs outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-          <div class="flex items-center gap-1.5">
-            <button onclick="pasteFromClipboardAndParse()" class="flex-1 px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition shadow-xs">
-              📋 一鍵貼上並解析
-            </button>
-            <button onclick="parsePastedCaptionBox()" class="px-2.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-medium transition">
-              ⚡ 解析文字
-            </button>
-          </div>
         </div>
-      </div>
-
-      <div class="bg-white rounded-xl border border-slate-200 p-3 shadow-sm flex flex-wrap items-center gap-2">
-        <span class="text-xs font-semibold text-slate-700">單筆店家快速測試：</span>
-        <input id="quickName" type="text" placeholder="輸入店名（如：山川咖喱 或 路易莎）" class="flex-1 min-w-[140px] rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs outline-none" />
-        <input id="quickAddr" type="text" placeholder="輸入地址（如：台北市大安區敦化南路一段161巷22號）" class="flex-[1.5] min-w-[200px] rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs outline-none" />
-        <button onclick="addManualLead()" class="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-medium hover:bg-slate-800 transition">
-          ＋ 加入篩選
-        </button>
-      </div>
-
-      <div class="bg-white rounded-xl border border-slate-200 shadow-sm flex-1 flex flex-col overflow-hidden">
-        <div class="p-3.5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
-          <div class="flex flex-wrap items-center gap-1.5">
-            <button onclick="setFilter('all')" id="tab-all" class="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white">
-              全部 (<span id="count-all">0</span>)
-            </button>
-            <button onclick="setFilter('pass')" id="tab-pass" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-emerald-50 text-emerald-800 hover:bg-emerald-100">
-              ✅ 可接洽開發 (<span id="count-pass">0</span>)
-            </button>
-            <button onclick="setFilter('blocked')" id="tab-blocked" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-rose-50 text-rose-800 hover:bg-rose-100">
-              ❌ 內部名單排除 (<span id="count-blocked">0</span>)
-            </button>
-            <button onclick="setFilter('out_of_zone')" id="tab-out_of_zone" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-purple-50 text-purple-800 hover:bg-purple-100">
-              🚫 外送範圍外 (<span id="count-out_of_zone">0</span>)
-            </button>
-            <button onclick="setFilter('live')" id="tab-live" class="px-2.5 py-1.5 rounded-lg text-xs font-medium bg-amber-50 text-amber-800 hover:bg-amber-100">
-              ⚠️ 該地址已上線 (<span id="count-live">0</span>)
-            </button>
-          </div>
-          <button onclick="clearAllLeads()" class="text-xs text-slate-400 hover:text-rose-600">清空列表</button>
-        </div>
-
-        <div class="overflow-x-auto flex-1">
-          <table class="w-full text-left border-collapse">
-            <thead>
-              <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-semibold text-slate-500 uppercase">
-                <th class="py-2.5 px-3">截圖 / 來源</th>
-                <th class="py-2.5 px-3">辨識店名與地址（可微調）</th>
-                <th class="py-2.5 px-3">關卡 1：內部 PDF 名單</th>
-                <th class="py-2.5 px-3">關卡 2：全台外送範圍 (KML)</th>
-                <th class="py-2.5 px-3">關卡 3：Google 地址上線查核</th>
-                <th class="py-2.5 px-3 text-right">最終判定</th>
-              </tr>
-            </thead>
-            <tbody id="leadsTableBody" class="divide-y divide-slate-200 text-xs">
-              <tr>
-                <td colspan="6" class="py-12 text-center text-slate-400">
-                  目前尚無資料。請先在左側上傳內部品牌 PDF，或點擊右上角「⚡ 載入範例實測」查看三重篩選效果。
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+      </details>
+      <details class="bg-white rounded-xl border border-slate-200 shadow-sm">
+        <summary class="cursor-pointer px-4 py-3 text-sm font-bold text-slate-800 select-none">🏬 百貨/商場排除規則說明</summary>
+        <div class="px-4 pb-4 text-xs text-slate-600 leading-relaxed">店名或地址含百貨、購物中心、商場、美食街、Outlet 或台南各百貨/商場名稱與地址（如 新光三越、新天地、南紡、三井 Outlet、遠百、統一時代…）會標記「百貨/商場櫃位・排除」，列為不可開發並排到最下方。「全部」預設隱藏，可勾選顯示或切到「🏬 百貨/商場排除」分頁檢視。</div>
+      </details>
+    </div>
   </main>
+
+  <!-- Mobile sticky action bar -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 grid grid-cols-4 text-[11px] font-bold" style="padding-bottom: env(safe-area-inset-bottom);">
+    <button onclick="document.getElementById('screenshotInput').click()" class="py-2.5 flex flex-col items-center text-blue-700">📸<span>上傳截圖</span></button>
+    <button onclick="pasteFromClipboardAndParse()" class="py-2.5 flex flex-col items-center text-indigo-700">📋<span>貼上文字</span></button>
+    <button onclick="parsePastedCaptionBox(); document.getElementById('resultsCard').scrollIntoView({behavior:'smooth'})" class="py-2.5 flex flex-col items-center text-slate-800">⚡<span>開始篩選</span></button>
+    <button onclick="exportCleanCSV()" class="py-2.5 flex flex-col items-center text-emerald-700">⬇<span>匯出CSV</span></button>
+  </nav>
+
 
   <div id="mapModal" class="fixed inset-0 bg-slate-900/60 z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-5xl w-full h-[80vh] flex flex-col shadow-2xl overflow-hidden">
@@ -678,7 +705,7 @@
 
       // 1. Full cleaned name
       addKw(s);
-      // 2. Strip trailing branch name in parens or after space: e.g. "浪食堂火烤便當（五常店）" -> "浪食堂火烤便當", "look咖啡 法式吐司 天母店" -> "look咖啡 法式吐司"
+      // 2. Strip trailing branch name in parens or after space: e.g. "某某便當（中正店）" -> "某某便當", "某某咖啡 早午餐 東區店" -> "某某咖啡 早午餐"
       const noParenBranch = s.replace(/[(\uff08][^)）]{1,12}(?:店|門市|分店|總店|旗艦店|概念店|專賣店|外帶店|形象店|直營店|創始店|攤|號)[)\uff09]/g, " ").replace(/\s+/g, " ").trim();
       addKw(noParenBranch);
       const noTrailingBranch = noParenBranch.replace(/\s+[^\s()（）]{1,12}(?:店|門市|分店|總店|旗艦店|概念店|專賣店|外帶店|形象店|直營店|創始店)$/g, "").trim();
@@ -2561,12 +2588,12 @@
         phone: '',
         address: '台南市永康區 (台南永康店)',
         rawText: '@yo.ltd.official_tw #YO COFFEE 悠咖啡 #啵肥就是小鬆餅專賣店 #Lookcafé 法式吐司 台南永康店',
-        candidateChips: ['YO COFFEE 悠咖啡', '啵肥就是小鬆餅專賣店', 'Lookcafé 法式吐司', 'look咖啡 法式吐司'],
+        candidateChips: ['YO COFFEE 悠咖啡', '啵肥就是小鬆餅專賣店'],
         showChips: false,
         lat: 23.02606,
         lng: 120.25701,
         isLiveOnAddress: false,
-        googleEvidence: '⚠️ 永康新店未上線（註：內部 PDF 有極相似「look咖啡 法式吐司 天母店」Q4 AM: Lisa Chen，可點下方候選詞切換檢視）'
+        googleEvidence: '⚠️ 永康新店未上線（內部名單比對請以本機載入的 PDF 為準）'
       },
       {
         id: 'today_11',
@@ -2770,8 +2797,21 @@
       renderTable();
     }
 
+    const MALL_KEYWORDS = ['新光三越','新天地','南紡購物中心','南紡','三井','MITSUI','Outlet','OUTLET','遠東百貨','大遠百','遠百','漢神','SOGO','太平洋百貨','統一時代','微風','百貨','購物中心','商場','美食街','Mall','MALL','家樂福','Global Mall','環球購物','西門路一段658號','中華東路一段366號','歸仁大道101號'];
+    function detectMall(lead) {
+      const text = [lead.name, lead.address].filter(Boolean).join(' ');
+      if (!text) return null;
+      const norm = text.replace(/[\s　]/g, '');
+      const lower = norm.toLowerCase();
+      for (const k of MALL_KEYWORDS) {
+        if (lower.includes(k.replace(/\s/g,'').toLowerCase())) return k;
+      }
+      return null;
+    }
     function getLeadStatus(lead) {
       if (lead.matchedBrandInfo) return 'blocked';
+      lead.mallKeyword = detectMall(lead);
+      if (lead.mallKeyword) return 'mall';
       if (Array.isArray(lead.matchedZones) && lead.matchedZones.length === 0) return 'out_of_zone';
       if (lead.isLiveOnAddress) return 'live';
       return 'pass';
@@ -2779,7 +2819,7 @@
 
     function setFilter(f) {
       currentFilter = f;
-      ['all', 'pass', 'blocked', 'out_of_zone', 'live'].forEach(tab => {
+      ['all', 'pass', 'blocked', 'out_of_zone', 'live', 'mall'].forEach(tab => {
         const el = document.getElementById('tab-' + tab);
         if (!el) return;
         el.className = (tab === f)
@@ -2798,16 +2838,27 @@
       return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
     }
 
+    function getVisibleLeads() {
+      const showMall = !!(document.getElementById('showMallToggle') || {}).checked;
+      const list = leads.filter(l => {
+        const st = getLeadStatus(l);
+        if (currentFilter === 'all') return st !== 'mall' || showMall;
+        return st === currentFilter;
+      });
+      return list.map((l, i) => [l, i]).sort((a, b) => ((getLeadStatus(a[0]) === 'mall') - (getLeadStatus(b[0]) === 'mall')) || (a[1] - b[1])).map(x => x[0]);
+    }
+
     function renderTable() {
-      const counts = { all: leads.length, pass: 0, blocked: 0, out_of_zone: 0, live: 0 };
+      const counts = { all: leads.length, pass: 0, blocked: 0, out_of_zone: 0, live: 0, mall: 0 };
       leads.forEach(l => counts[getLeadStatus(l)]++);
+      const cm = document.getElementById('count-mall'); if (cm) cm.textContent = counts.mall;
       document.getElementById('count-all').textContent = counts.all;
       document.getElementById('count-pass').textContent = counts.pass;
       document.getElementById('count-blocked').textContent = counts.blocked;
       document.getElementById('count-out_of_zone').textContent = counts.out_of_zone;
       document.getElementById('count-live').textContent = counts.live;
 
-      const filtered = leads.filter(l => currentFilter === 'all' || getLeadStatus(l) === currentFilter);
+      const filtered = getVisibleLeads();
       const tbody = document.getElementById('leadsTableBody');
 
       if (filtered.length === 0) {
@@ -2820,7 +2871,9 @@
         const searchUrl = buildGoogleSearchUrl(lead);
 
         let badgeHtml = '';
-        if (status === 'blocked') {
+        if (status === 'mall') {
+          badgeHtml = `<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-200 text-slate-800">🏬 百貨/商場櫃位・排除</span><div class="text-[10px] text-slate-500 mt-1">命中：${escapeHtml(lead.mallKeyword || '')}・不可開發</div>`;
+        } else if (status === 'blocked') {
           badgeHtml = `<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800">❌ 不可接洽 (內部名單)</span>`;
         } else if (status === 'out_of_zone') {
           badgeHtml = `<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-purple-100 text-purple-800">🚫 排除 (外送範圍外)</span>`;
@@ -3132,7 +3185,7 @@
     }
 
     function stepImagePreview(delta) {
-      const filtered = leads.filter(l => currentFilter === "all" || getLeadStatus(l) === currentFilter);
+      const filtered = getVisibleLeads();
       const list = filtered.length > 0 ? filtered : leads;
       if (list.length === 0) return;
       const idx = list.findIndex(l => l.id === currentPreviewLeadId);
@@ -3205,7 +3258,10 @@
         ? (lead.matchedZones.length > 0 ? `外送區：${lead.matchedZones.join(", ")}` : "外送範圍外")
         : "座標待定位";
 
-      if (status === "blocked") {
+      if (status === "mall") {
+        banner.className = "p-2.5 rounded-xl border border-slate-300 bg-slate-100 text-slate-900 text-xs flex flex-wrap items-center justify-between gap-2";
+        banner.innerHTML = `<span class="font-bold">🏬 百貨/商場櫃位・排除（命中：${escapeHtml(lead.mallKeyword || "")}）不可開發</span><span>${escapeHtml(zoneText)}</span>`;
+      } else if (status === "blocked") {
         banner.className = "p-2.5 rounded-xl border border-rose-200 bg-rose-50 text-rose-900 text-xs flex flex-wrap items-center justify-between gap-2";
         banner.innerHTML = `<span class="font-bold">❌ 內部名單排除（命中：${escapeHtml(lead.matchedBrandInfo?.matchedKeyword || "")} · AM: ${escapeHtml(lead.matchedBrandInfo?.am || "")}）</span><span>${escapeHtml(zoneText)}</span>`;
       } else if (status === "out_of_zone") {
